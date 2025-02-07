@@ -1,0 +1,18 @@
+diff --git a/Libraries/Core/setUpDeveloperTools.js b/Libraries/Core/setUpDeveloperTools.js
+index 5cc39eae9c1274d2adaf739ecd5d1c61de0a8c35..14ddd0c1a216cf554249db8bf030f8f77bd4ba7d 100644
+--- a/Libraries/Core/setUpDeveloperTools.js
++++ b/Libraries/Core/setUpDeveloperTools.js
+@@ -42,9 +42,10 @@ if (__DEV__) {
+   if (!Platform.isTesting) {
+     const HMRClient = require('../Utilities/HMRClient');
+ 
+-    if (global.__FUSEBOX_HAS_FULL_CONSOLE_SUPPORT__) {
+-      HMRClient.unstable_notifyFuseboxConsoleEnabled();
+-    } else if (console._isPolyfilled) {
++    // if (global.__FUSEBOX_HAS_FULL_CONSOLE_SUPPORT__) {
++    //   HMRClient.unstable_notifyFuseboxConsoleEnabled();
++    // } else 
++    if (console._isPolyfilled) {
+       // We assume full control over the console and send JavaScript logs to Metro.
+       [
+         'trace',
